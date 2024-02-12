@@ -210,9 +210,10 @@ class UserController {
             let obj = { users: [] };
 
             try {
-                let obj = JSON.parse(ajax.responseText);
+                obj = JSON.parse(ajax.responseText);
             } catch (e) {
-                console.log(e);
+                console.log(obj);
+                console.error(e);
             }
 
             obj.users.forEach(dataUser=>{
