@@ -1,3 +1,5 @@
+//const { param } = require("../../routes/users");
+
 class HttpRequest {
 
     static get(url, params = {}) {
@@ -14,7 +16,7 @@ class HttpRequest {
 
     static put(url, params = {}) {
         
-        return HttpRequest.request('PUT5', url, params);
+        return HttpRequest.request('PUT', url, params);
 
     }
 
@@ -51,7 +53,9 @@ class HttpRequest {
 
             };
 
-            ajax.send();
+            ajax.setRequestHeader('Content-type', 'application/json');
+
+            ajax.send(JSON.stringify(params));
 
         });
 
